@@ -1,3 +1,4 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from "redux";
+import { addressesReducer, dataReducer } from "./reducersAndActions";
 
-export const rootReducer = combineReducers({})
+export const rootReducer = combineReducers({ addressesReducer, dataReducer });
