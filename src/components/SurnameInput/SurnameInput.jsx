@@ -1,8 +1,8 @@
-import { StyledInput, StyledErrorP } from "../../App";
+import { StyledInput, StyledErrorP, Row } from "../../assets/styledComponents";
 
 const SurnameInput = ({ label, register, errors }) => {
     return (
-        <>
+        <Row>
             <StyledInput
                 {...register(label, { required: true })}
                 placeholder="Surname"
@@ -11,7 +11,7 @@ const SurnameInput = ({ label, register, errors }) => {
             {errors[label] && (
                 <StyledErrorP>This field is required</StyledErrorP>
             )}
-        </>
+        </Row>
     );
 };
 

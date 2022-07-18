@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import NameInput from "./components/NameInput";
 import SurnameInput from "./components/SurnameInput";
 import PhoneNumberInput from "./components/PhoneNumberInput";
@@ -8,41 +7,19 @@ import AddressInput from "./components/AddressInput";
 import DataUsageConfirmation from "./components/DataUsageConfirmation";
 import SubmitButton from "./components/SubmitButton";
 import DataTable from "./components/DataTable/DataTable";
+import Autosuggests from "./components/Autosuggests";
+
+import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { SET_DATA } from "./redux/reducersAndActions";
+import { Row } from "./assets/styledComponents";
 
-export const StyledInput = styled.input.attrs({
-    type: "text",
-})`
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    border: 1px solid ${(props) => (props.error ? "#dc3545" : "#ced4da")};
-    border-radius: 0.25rem;
-    outline: none;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    &:focus {
-        ${(props) =>
-            props.error
-                ? "box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);"
-                : "border-color: #80bdff;  box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%)"}
-    }
-`;
-const Row = styled.div`
-    margin-bottom: 1rem;
-`;
-export const StyledNumberInput = styled(StyledInput).attrs({
-    type: "number",
-})``;
-export const StyledErrorP = styled.p`
-    color: #dc3545;
-    margin-bottom: 0;
-    margin-top: 1rem;
-`;
 const StyledForm = styled.form`
     margin-bottom: 2rem;
+`;
+const RelativeRow = styled(Row)`
+    position: relative;
 `;
 
 const App = () => {
@@ -51,6 +28,7 @@ const App = () => {
         register,
         reset,
         formState: { errors },
+        setValue,
     } = useForm();
 
     const dispatch = useDispatch();
@@ -72,55 +50,44 @@ const App = () => {
     return (
         <>
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
-                <Row>
-                    <NameInput
-                        register={register}
-                        label="name"
-                        errors={errors}
-                    ></NameInput>
-                </Row>
-                <Row>
-                    <SurnameInput
-                        register={register}
-                        label="surname"
-                        errors={errors}
-                    ></SurnameInput>
-                </Row>
-                <Row>
-                    <PhoneNumberInput
-                        register={register}
-                        label="phoneNumber"
-                        errors={errors}
-                    ></PhoneNumberInput>
-                </Row>
-                <Row>
-                    <EmailInput
-                        register={register}
-                        label="email"
-                        errors={errors}
-                    ></EmailInput>
-                </Row>
-                <Row>
-                    <GenderSelect
-                        register={register}
-                        label="gender"
-                        errors={errors}
-                    ></GenderSelect>
-                </Row>
-                <Row>
+                <NameInput
+                    register={register}
+                    label="name"
+                    errors={errors}
+                ></NameInput>
+                <SurnameInput
+                    register={register}
+                    label="surname"
+                    errors={errors}
+                ></SurnameInput>
+                <PhoneNumberInput
+                    register={register}
+                    label="phoneNumber"
+                    errors={errors}
+                ></PhoneNumberInput>
+                <EmailInput
+                    register={register}
+                    label="email"
+                    errors={errors}
+                ></EmailInput>
+                <GenderSelect
+                    register={register}
+                    label="gender"
+                    errors={errors}
+                ></GenderSelect>
+                <RelativeRow>
                     <AddressInput
                         register={register}
                         label="address"
                         errors={errors}
                     ></AddressInput>
-                </Row>
-                <Row>
-                    <DataUsageConfirmation
-                        register={register}
-                        label="dataUsageConfirmation"
-                        errors={errors}
-                    ></DataUsageConfirmation>
-                </Row>
+                    <Autosuggests setValue={setValue}></Autosuggests>
+                </RelativeRow>
+                <DataUsageConfirmation
+                    register={register}
+                    label="dataUsageConfirmation"
+                    errors={errors}
+                ></DataUsageConfirmation>
                 <SubmitButton></SubmitButton>
             </StyledForm>
             <DataTable></DataTable>

@@ -13,7 +13,6 @@ export const addressesReducer = (state = addressesInitState, action) => {
     }
 };
 
-const dataInitState = [];
 export const dataReducer = (state = [], action) => {
     switch (action.type) {
         case SET_DATA:

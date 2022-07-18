@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Row } from "../../assets/styledComponents";
 
 const StyledSelect = styled.select`
     height: calc(2.25rem + 2px);
@@ -17,13 +18,13 @@ const StyledSelect = styled.select`
 
 const GenderSelect = ({ label, register, errors }) => {
     return (
-        <>
+        <Row>
             <StyledSelect {...register(label, { required: true })}>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </StyledSelect>
             {errors[label] && <span>This field is required</span>}
-        </>
+        </Row>
     );
 };
 

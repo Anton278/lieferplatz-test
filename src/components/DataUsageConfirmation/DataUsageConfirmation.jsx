@@ -1,8 +1,8 @@
-import { StyledErrorP } from "../../App";
+import { StyledErrorP, Row } from "../../assets/styledComponents";
 
 const DataUsageConfirmation = ({ label, register, errors }) => {
     return (
-        <>
+        <Row>
             <label>
                 <input
                     type="checkbox"
@@ -13,7 +13,7 @@ const DataUsageConfirmation = ({ label, register, errors }) => {
             {errors[label] && (
                 <StyledErrorP>This option is required</StyledErrorP>
             )}
-        </>
+        </Row>
     );
 };
 
