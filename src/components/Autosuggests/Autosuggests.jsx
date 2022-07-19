@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { SET_RESULTS } from "../../redux/reducersAndActions";
@@ -25,7 +25,7 @@ const StyledLi = styled.li`
     }
 `;
 
-const Autosuggests = ({ setValue, addressInputRef }) => {
+const Autosuggests = ({ setValue }) => {
     const dispatch = useDispatch();
     const suggests = useSelector((state) => state.addressesReducer.results);
 
