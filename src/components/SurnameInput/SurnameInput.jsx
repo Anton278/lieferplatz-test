@@ -1,4 +1,5 @@
 import { StyledInput, StyledErrorP, Row } from "../../assets/styledComponents";
+import React from "react";
 
 const SurnameInput = ({ label, register, errors }) => {
     return (

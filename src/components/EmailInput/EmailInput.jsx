@@ -1,4 +1,5 @@
 import { StyledInput, StyledErrorP, Row } from "../../assets/styledComponents";
+import React from "react";
 
 const EmailInput = ({ label, register, errors, setError }) => {
     return (

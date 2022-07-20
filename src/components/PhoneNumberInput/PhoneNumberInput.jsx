@@ -3,6 +3,7 @@ import {
     StyledErrorP,
     Row,
 } from "../../assets/styledComponents";
+import React from "react";
 
 const PhoneNumberInput = ({ label, register, errors }) => {
     return (
