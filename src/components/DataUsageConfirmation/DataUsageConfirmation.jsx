@@ -1,4 +1,5 @@
 import { StyledErrorP, Row } from "../../assets/styledComponents";
+import React from "react";
 
 const DataUsageConfirmation = ({ label, register, errors }) => {
     return (
