@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Row } from "../../assets/styledComponents";
+import React from "react";
 
-const StyledSelect = styled.select`
+export const StyledSelect = styled.select`
     height: calc(2.25rem + 2px);
     padding: 0.375rem 1.75rem 0.375rem 0.75rem;
     line-height: 1.5;
@@ -16,14 +17,13 @@ const StyledSelect = styled.select`
     }
 `;
 
-const GenderSelect = ({ label, register, errors }) => {
+const GenderSelect = ({ label, register }) => {
     return (
         <Row>
-            <StyledSelect {...register(label, { required: true })}>
+            <StyledSelect {...register(label)}>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </StyledSelect>
-            {errors[label] && <span>This field is required</span>}
         </Row>
     );
 };
