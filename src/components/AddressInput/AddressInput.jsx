@@ -2,13 +2,14 @@ import { StyledInput, StyledErrorP } from "../../assets/styledComponents";
 import { getAutosuggests } from "../../redux/asyncActions";
 import { useDispatch } from "react-redux";
 import { SET_RESULTS } from "../../redux/reducersAndActions";
+import React from "react";
 
-const AddressInput = ({ label, register, errors, watch }) => {
+const AddressInput = ({ label, register, errors }) => {
     const dispatch = useDispatch();
 
     const onChangeHandler = (e) => {
         if (e.target.value.trim().length) {
-            dispatch(getAutosuggests(watch(e.target.value)));
+            dispatch(getAutosuggests(e.target.value));
         } else {
             dispatch({ type: SET_RESULTS, payload: [] });
         }
