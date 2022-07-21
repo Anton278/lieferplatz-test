@@ -1,5 +1,4 @@
 import { getAutosuggests } from "./asyncActions";
-import { SET_IS_SEARCHING, SET_RESULTS } from "./reducersAndActions";
 
 describe("get-autosuggests thunk", () => {
     test("success request", async () => {
