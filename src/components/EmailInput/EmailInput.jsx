@@ -1,7 +1,7 @@
 import { StyledInput, StyledErrorP, Row } from "../../assets/styledComponents";
 import React from "react";
 
-const EmailInput = ({ label, register, errors, setError }) => {
+const EmailInput = ({ label, register, errors }) => {
     return (
         <Row>
             <StyledInput
