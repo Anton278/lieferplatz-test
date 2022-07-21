@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import React from "react";
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
     line-height: 1.5;
     text-align: center;
     cursor: pointer;
@@ -21,11 +22,7 @@ const StyledButton = styled.button`
 `;
 
 const SubmitButton = () => {
-    return (
-        <>
-            <StyledButton type="submit">Submit</StyledButton>
-        </>
-    );
+    return <StyledButton type="submit">Submit</StyledButton>;
 };
 
 export default SubmitButton;
