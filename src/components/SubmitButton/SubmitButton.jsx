@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
@@ -22,11 +21,6 @@ const StyledButton = styled.button`
 `;
 
 const SubmitButton = () => {
-    const {
-        register,
-        formState: { errors },
-    } = useForm();
-
     return (
         <>
             <StyledButton type="submit">Submit</StyledButton>
